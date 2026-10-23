@@ -1,0 +1,7 @@
+private/
+outputs/
+sources.local.*
+.env
+.env.*
+*.log
+.DS_Store
