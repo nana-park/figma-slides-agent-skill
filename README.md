@@ -1,36 +1,46 @@
-# figma-slides-agent-skill
+# Figma Slides Agent Skill
 
-한국어 발표 자료의 요구사항을 열 가지 입력 영역으로 정리하고, 제작 도구에 전달할 프롬프트를 조립하는 스킬입니다. Figma 파일을 자동 생성하는 독립 실행 프로그램은 아닙니다.
+A Korean-language skill for planning slides and assembling a clear production prompt for Figma or presentation tools.
 
-## 시작하기
+It collects requirements across ten input sections. It is a set of instructions and templates, not a standalone app.
 
-1. 저장소를 다운로드하거나 복제하고 에이전트 작업공간으로 엽니다.
-2. [SKILL.md](SKILL.md)를 읽고 발표 주제·청중·목적과 사용 가능한 자료를 제공합니다.
-3. 06 목적 → 07 자료 → 08 이야기 → 09 장표 내용 → 01~05 디자인 → 10 제작 조건 순으로 필요한 입력을 채웁니다.
-4. 프롬프트 조립만 요청하면 outputs/final-prompt.md를 작성합니다.
-5. 실제 제작까지 요청하면 현재 환경에 연결된 Figma 또는 발표 자료 도구의 지원 범위와 대상 파일 권한을 확인합니다.
+## Quick start
 
-## 입력 구성
+1. Download or clone this repository and open it in your agent workspace.
+2. Ask the agent to read [SKILL.md](SKILL.md).
+3. Provide the topic, audience, goal, source material, and desired output.
+4. Fill in the required inputs. The agent should ask only for missing information.
+5. For prompt-only work, the output is `outputs/final-prompt.md`. For slide production, connect a supported Figma or presentation tool and provide the target file.
 
-- [01 디자인](01-design-system/README.md)
-- [02 레이아웃](02-common-layout/README.md)
-- [03 장표 유형](03-slide-types/README.md)
-- [04 차트와 표](04-charts-and-tables/README.md)
-- [05 레퍼런스](05-references/README.md)
-- [06 목적](06-purpose/README.md)
-- [07 원본 자료](07-source-materials/README.md)
-- [08 이야기](08-storytelling/README.md)
-- [09 장표 내용](09-slide-content/README.md)
-- [10 제작과 검수](10-production-rules/README.md)
+Korean example request:
 
-## 레퍼런스 설정
+> SKILL.md를 읽고 신제품 소개 발표의 요구사항을 정리해줘. 우선 제작 프롬프트만 만들어줘.
 
-공개본에는 내부 Figma 파일·노드, 강의 대화, 학생 정보, 개인 작성자·연락처·로고가 포함되지 않습니다. 기존 샘플을 참조하는 규칙은 자신이 사용할 권한을 가진 레퍼런스를 지정한 경우에 적용합니다. 연결하지 못한 샘플의 좌표를 확인했다고 주장하지 않습니다. 제공된 수치 표는 일반 기본 프리셋이며 특정 파일에 접근하지 않아도 읽을 수 있습니다.
+## Input sections
 
-발표별 입력과 실제 링크·자료는 private/ 또는 outputs/ 등 Git 제외 위치에 보관하세요. .gitignore는 이미 추적 중인 파일의 노출을 방지하지 않으므로 공개 전 검토가 필요합니다.
+| Section | Purpose |
+| --- | --- |
+| [01 Design system](01-design-system/README.md) | Size, colors, typography |
+| [02 Common layout](02-common-layout/README.md) | Grid, components, text |
+| [03 Slide types](03-slide-types/README.md) | Covers, contents, chapter dividers |
+| [04 Charts and tables](04-charts-and-tables/README.md) | Data and visual rules |
+| [05 References](05-references/README.md) | What to reuse from a reference |
+| [06 Purpose](06-purpose/README.md) | Audience, goal, key message |
+| [07 Source material](07-source-materials/README.md) | Evidence and research scope |
+| [08 Storytelling](08-storytelling/README.md) | Narrative and transitions |
+| [09 Slide content](09-slide-content/README.md) | Content for each slide |
+| [10 Production and review](10-production-rules/README.md) | Editing, layout, checks, export |
 
-## 한계
+## Set up your own references
 
-이 저장소는 문서 지침입니다. Figma 연결·폰트·편집 가능 도형·차트·내보내기는 사용하는 도구에서 지원해야 합니다. 공개본으로 새 덱 제작 전체를 실전 검증하지 않았습니다. 프롬프트 완성, 파일 생성, 렌더링 검수는 각각 확인해야 합니다.
+No private Figma files, node links, lecture conversations, student records, personal contact details, or brand assets are included. Supply references that you have permission to use. Sample-based rules require your own reference; the agent must not claim to have inspected an unavailable file.
 
-유용한 일반 규칙을 별도 공개 배포본으로 정리했으며 원본 Git 이력·실제 강의 기록을 가져오지 않았습니다. 실행 코드는 변경하지 않았고 개인 식별 정보와 작업별 기록을 일반 예시로 정리했습니다.
+The numeric tables are reusable default presets. Keep project-specific inputs and links in `private/` or `outputs/`, which are ignored by Git. Review staged files before publishing: .gitignore does not protect files already tracked.
+
+## Requirements and limits
+
+The core guides are in Korean. Actual slide creation needs a compatible tool, access to the target file, and the required fonts. Editable charts, shapes, and exports depend on that tool.
+
+This public edition has not been tested through a complete deck production run. Prompt completion, file creation, and visual review are separate results and must be verified separately.
+
+This is a clean public edition with fresh history. Personal records and the original repository history are excluded. No executable code was changed; project-specific documentation was generalized.
